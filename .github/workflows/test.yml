@@ -1,0 +1,14 @@
+name: Test Leetify API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test API
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.LEETIFY_API_KEY }}" \
+          "https://api-public.cs-prod.leetify.com/v3/profile?steam64_id=76561198815291086"
